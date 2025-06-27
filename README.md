@@ -4,11 +4,13 @@ Este proyecto implementa un SOC (Security Operations Center) inteligente que sim
 
 ## 🚀 Instrucciones de instalación y ejecución
 
-1. Clonar el repositorio: git clone https://github.com/Void-DanielS/Intelligent-Soc-V2.git && cd Intelligent-Soc-V2  
+1. Clonar el repositorio: git clone https://github.com/Void-DanielS/Intelligent-SOC-V2.git && cd Intelligent-SOC-V2  
 2. Instalar dependencias de Python: pip install -r requirements.txt  
-3. Iniciar el backend (Flask): python Backend/main.py  
-4. Iniciar el frontend (React + Vite): npm install && npm run dev  
-5. Ejecutar el simulador (opcional): python simulator.py  
+3. Entrenar los modelos: python Backend/train_models.py  
+   ⚠️ Esto generará los archivos de modelos necesarios para la clasificación en tiempo real. Es obligatorio antes de iniciar el backend.  
+4. Iniciar el backend (Flask): python Backend/main.py  
+5. Iniciar el frontend (React + Vite): npm install && npm run dev  
+6. Ejecutar el simulador (opcional): python simulator.py  
 
 ## 📁 Estructura del proyecto
 
@@ -29,7 +31,7 @@ Intelligent-Soc-V2/
 ├── node_modules/  
 └── ...
 
-## 🧠 Autores
+## 🧠 Autor
 
-Daniel Sebastian Cabrera Lazo, Lindo Marx Rojas Rojas, Priscila Cassiel Rojas Suarez, Tamara Bejar Ikeda   
+Daniel Sebastian Cabrera Lazo, Lindo Marx Rojas Rojas, Priscila Cassiel Rojas Suarez, Tamara Bejar Ikeda  
 Desarrollado como proyecto final del curso PACD – Universidad del Pacífico
