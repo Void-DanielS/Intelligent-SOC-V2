@@ -4,11 +4,14 @@ import time
 import random
 import joblib
 from datetime import datetime
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # ── Configuración ──────────────────────────────────────────────────────────────
-CLEANED_CSV   = 'data/processed/cleaned_dataset.csv'
-RAW_CSV       = 'data/raw/Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv'
-SCALER_PATH   = 'models/scaler.joblib'
+CLEANED_CSV   = os.path.join(BASE_DIR, 'data', 'processed', 'cleaned_dataset.csv')
+RAW_CSV       = os.path.join(BASE_DIR, 'data', 'raw', 'Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv')
+SCALER_PATH   = os.path.join(BASE_DIR, 'models', 'scaler.joblib')
 API_ENDPOINT  = 'http://localhost:5000/api/traffic'
 
 # ── Carga de datasets y modelos ────────────────────────────────────────────────
@@ -29,11 +32,11 @@ feature_cols = [c for c in clean_df.columns if c not in meta_cols.union(label_co
 
 scaler = joblib.load(SCALER_PATH)
 MODELS = {
-    'Logistic Regression': joblib.load('models/logistic_regression.joblib'),
-    'Decision Tree':       joblib.load('models/decision_tree.joblib'),
-    'Random Forest':       joblib.load('models/random_forest.joblib'),
-    'KNN':                 joblib.load('models/knn.joblib'),
-    'SVM':                 joblib.load('models/svm.joblib'),
+    'Logistic Regression': joblib.load(os.path.join(BASE_DIR, 'models', 'logistic_regression.joblib')),
+    'Decision Tree':       joblib.load(os.path.join(BASE_DIR, 'models', 'decision_tree.joblib')),
+    'Random Forest':       joblib.load(os.path.join(BASE_DIR, 'models', 'random_forest.joblib')),
+    'KNN':                 joblib.load(os.path.join(BASE_DIR, 'models', 'knn.joblib')),
+    'SVM':                 joblib.load(os.path.join(BASE_DIR, 'models', 'svm.joblib')),
 }
 
 print(f"✅ clean_df: {clean_df.shape[0]} filas, features: {len(feature_cols)} columnas")
